@@ -5,6 +5,13 @@ import android.support.annotation.Nullable;
 
 public interface NodeSelector {
 
+    NodeSelector ALWAYS = new NodeSelector() {
+        @Override
+        public boolean select(Bundle args) {
+            return true;
+        }
+    };
+
     /**
      * Method for knowing if the node should be picked or not according to the information
      * inside the bundle

@@ -142,12 +142,7 @@ public class ViewsActivity extends Activity implements Router.OnNodeCommitListen
         Graph graph = new DirectedAcyclicGraph();
 
         // Create a node with a custom view that sets its stuff
-        Node start = new Node(CustomView1.class, new NodeSelector() {
-            @Override
-            public boolean select(@Nullable final Bundle args) {
-                return true; // Always pick it, its the root.
-            }
-        });
+        Node start = new Node(CustomView1.class, NodeSelector.ALWAYS);
 
         // Another one the same as the start but with a selector that uses arguments for deciding
         Node minor = new Node(CustomView2.class, new NodeSelector() {
@@ -167,12 +162,7 @@ public class ViewsActivity extends Activity implements Router.OnNodeCommitListen
         grownUp.tag("TAG_GROWNUP");
 
         // Same as before
-        Node end = new Node(TextView.class, new NodeSelector() {
-            @Override
-            public boolean select(@Nullable final Bundle args) {
-                return true; // Both conclude here
-            }
-        });
+        Node end = new Node(TextView.class, NodeSelector.ALWAYS);
         end.tag("TAG_END");
 
         // Add the nodes to the graph, the order doesnt mind, when connected the shape will be formed.

@@ -53,20 +53,12 @@ dependencies {
   Graph graph = new DirectedAcyclicGraph();
 
   // Create the name input node
-  Node nameNode = new Node(NameInputView.class, new NodeSelector() {
-    @Override
-    public boolean select(@Nullable final Bundle args) {
-      return true; // Always pick it, its the root?
-    }
-  });
+  // Always pick it, its the root?
+  Node nameNode = new Node(NameInputView.class, NodeSelector.ALWAYS);
   
   // Create the age input node
-  Node ageNode = new Node(AgeInputView.class, new NodeSelector() {
-    @Override
-    public boolean select(@Nullable final Bundle args) {
-      return true; // Always pick it if coming from the name.
-    }
-  });
+  // Always pick it if coming from the name.
+  Node ageNode = new Node(AgeInputView.class, NodeSelector.ALWAYS);
   
   // Create the under 18 input node
   Node underEighteenNode = new Node(UnderEighteenView.class, new NodeSelector() {
@@ -77,12 +69,8 @@ dependencies {
   });  
 
   // Create the email input node
-  Node emailNode = new Node(EmailInputView.class, new NodeSelector() {
-    @Override
-    public boolean select(@Nullable final Bundle args) {
-      return true; // Always pick, doesnt matter from where you come
-    }
-  });
+  // Always pick, doesnt matter from where you come
+  Node emailNode = new Node(EmailInputView.class, NodeSelector.ALWAYS);
 
   // Add the nodes to the graph, the order doesnt mind, when connected the shape will be formed.
   graph.add(emailNode);
