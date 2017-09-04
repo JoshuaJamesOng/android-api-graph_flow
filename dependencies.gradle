@@ -10,7 +10,8 @@ ext {
     support = [
         appCompat : "com.android.support:appcompat-v7:$supportLibraryVersion",
         utils : "com.android.support:support-core-utils:$supportLibraryVersion",
-        fragments : "com.android.support:support-fragment:$supportLibraryVersion"
+        fragments : "com.android.support:support-fragment:$supportLibraryVersion",
+        annotations: "com.android.support:support-annotations:$supportLibraryVersion"
     ]
 
     conductorVersion = '2.1.3'

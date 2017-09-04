@@ -5,5 +5,7 @@ android {
 }
 
 dependencies {
-    compile support.utils
+    compile support.annotations
+
+    provided support.utils
 }

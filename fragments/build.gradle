@@ -5,7 +5,7 @@ android {
 }
 
 dependencies {
-    compile support.fragments
+    provided support.fragments
 
     compile project(path:':core')
 }
